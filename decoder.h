@@ -4,6 +4,7 @@
 #include <sys/time.h>
 #include <string>
 #include <map>
+#include <stdint.h>
 
 using std::string;
 using std::map;
