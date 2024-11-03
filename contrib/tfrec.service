@@ -1,0 +1,13 @@
+[Unit]
+Description=TFA Weatherhub TFREC service
+Requires=mosquitto.service
+After=mosquitto.service
+
+[Service]
+Type=simple
+ExecStart=/opt/tfrec/tfrec -T 21 -q -e /opt/tfrec/contrib/mqtt-publish.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
