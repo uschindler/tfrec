@@ -549,7 +549,7 @@ void whb_decoder::flush(int rssi, int offset)
 	}
  bad:
 	bad++;
-	if (dbg) {
+	if (dbg>0) {
 		if (crc_val!=crc_calc)
 			printf("\nWHB BAD %i RSSI %i (CRC is %08x, should be %08x, len %i, plen %i)\n",
 			       bad, rssi, crc_val,crc_calc, byte_cnt,plen);

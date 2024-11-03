@@ -74,7 +74,7 @@ void tfa2_decoder::flush_tx22(int rssi, int offset)
 	uint8_t crc_val=0,crc_calc=0;
 	
 	if (byte_cnt>=7 && byte_cnt<64) {
-		if (dbg) {
+		if (dbg>0) {
 			printf("#%03i %u  ",snum++,(uint32_t)time(0));
 			for(int n=0;n<byte_cnt;n++)
 				printf("%02x ",rdata[n]);
@@ -220,7 +220,7 @@ void tfa2_decoder::flush_tfa(int rssi, int offset)
 {
 	//printf(" CNT %i\n",byte_cnt);
 	if (byte_cnt>=7) {
-		if (dbg) {
+		if (dbg>0) {
 			printf("#%03i %u  ",snum++,(uint32_t)time(0));
 			for(int n=0;n<7;n++)
 				printf("%02x ",rdata[n]);
@@ -263,7 +263,7 @@ void tfa2_decoder::flush_tfa(int rssi, int offset)
 		}
 		else {
 			bad++;
-			if (dbg) {
+			if (dbg>0) {
 				if (crc_val!=crc_calc)
 					printf("TFA%i BAD %i RSSI %i  Offset %.0lfkHz (CRC %02x %02x)\n",type+1,bad,rssi,
 					       -1536.0*offset/131072,
