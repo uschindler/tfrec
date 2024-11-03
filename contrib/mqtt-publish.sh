@@ -8,4 +8,4 @@ rssi=$6
 topic="tfa-weatherhub/$id"
 message="$temp $hum $lowbatt $rssi"
 
-exec /usr/bin/mosquitto_pub -u home -P lolifu -t "$topic" -m "$message"
+exec /usr/bin/mosquitto_pub -u home -P lolifu -t "$topic" -r -m "$message"
