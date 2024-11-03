@@ -201,7 +201,7 @@ void tfa2_decoder::flush_tx22(int rssi, int offset)
 	}
  bad:
 
-	if (dbg && byte_cnt>=7 && byte_cnt<64) {
+	if (dbg>0 && byte_cnt>=7 && byte_cnt<64) {
 		bad++;
 		if (crc_val!=crc_calc)
 			printf("TX22(%02x) BAD %i RSSI %i  Offset %.0lfkHz (CRC %02x %02x) len %i\n",1<<type,bad,rssi,

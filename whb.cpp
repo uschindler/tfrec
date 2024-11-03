@@ -485,7 +485,7 @@ void whb_decoder::flush(int rssi, int offset)
 		goto reset;
 	
 	// FIXME: byte count usually 2-3 bytes longer than real payload
-	if (dbg && byte_cnt) {
+	if (dbg>0 && byte_cnt) {
 		printf("#%03i %u L=%i  ",snum++,(uint32_t)time(0), byte_cnt);
 		for(int n=0;n<byte_cnt;n++)
 			printf("%02x ",rdata[n]);
