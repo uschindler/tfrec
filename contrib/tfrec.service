@@ -5,7 +5,9 @@ After=mosquitto.service
 
 [Service]
 Type=simple
-ExecStart=/opt/tfrec/tfrec -T 21 -q -e /opt/tfrec/contrib/mqtt-publish.sh
+User=tfrec
+WorkingDirectory=/opt/tfrec
+ExecStart=./tfrec -T 21 -q -e ./contrib/mqtt-publish.sh
 Restart=on-failure
 RestartSec=5
 
