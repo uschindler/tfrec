@@ -9,4 +9,4 @@ ts=$8
 topic="tfa-weatherhub/$id"
 message="$temp $hum $lowbatt $rssi $ts"
 
-exec /usr/bin/mosquitto_pub -u home -P lolifu -t "$topic" -r -m "$message"
+exec /usr/bin/mosquitto_pub -u tfrec -P tfrec -r -t "$topic" -m "$message"
